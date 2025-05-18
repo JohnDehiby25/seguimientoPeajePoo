@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo;
 
-public class VehiculoCarro extends Vehiculo {
+public class VehiculoCarro extends Vehiculo  implements IDescripcion{
 
     private TipoCarro tipoCarro;
 
@@ -10,6 +10,12 @@ public class VehiculoCarro extends Vehiculo {
         this.tipoCarro=tipoCarro;
     }
 
+    public void informacionGeneralVehiculo(){
+        System.out.println("El carro cuenta con las siguientes características: ");
+        System.out.println("Placa: " + this.getPlaca());
+        System.out.println("Numero peajes pagados: " + this.getNumeroPeajesPagados());
+        System.out.println("Tipo de carro:" + this.getTipoCarro());
+    }
     public TipoCarro getTipoCarro() {
         return tipoCarro;
     }

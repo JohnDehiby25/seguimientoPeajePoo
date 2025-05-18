@@ -10,6 +10,13 @@ public class VehiculoMoto  extends Vehiculo{
 
         this.cilindraje=cilindraje;
     }
+    
+    public void informacionGeneralVehiculo(){
+        System.out.println("La moto cuenta con las siguientes características: ");
+        System.out.println("Placa: " + this.getPlaca());
+        System.out.println("Numero peajes pagados: " + this.getNumeroPeajesPagados());
+        System.out.println("Cilindraje: " + this.getCilindraje());
+    }
 
     public double getCilindraje() {
         return cilindraje;

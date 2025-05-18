@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo;
 
-public class VehiculoCamion extends Vehiculo{
+public class VehiculoCamion extends Vehiculo implements IDescripcion{
     private double capacidadCarga;
     private int numeroEjes;
 
@@ -9,6 +9,13 @@ public class VehiculoCamion extends Vehiculo{
         super(placa, numeroPeajesPagados);
         this.capacidadCarga=capacidadCarga;
         this.numeroEjes=numeroEjes;
+    }
+    public void informacionGeneralVehiculo(){
+        System.out.println("El camión cuenta con las siguientes características: ");
+        System.out.println("Placa: " + this.getPlaca());
+        System.out.println("Numero peajes pagados: " + this.getNumeroPeajesPagados());
+        System.out.println("Capacidad de carga: " + this.getCapacidadCarga());
+        System.out.println("Numero de ejes: " + this.getNumeroEjes());
     }
 
     public double getCapacidadCarga() {

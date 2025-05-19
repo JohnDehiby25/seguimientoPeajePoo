@@ -201,6 +201,39 @@ public class EstacionPeaje {
     listVehiculos.add(v);
     System.out.println("El vehiculo " + v.getPlaca() + " pagó " + totalRecaudado + " pesos");
 
+   }
+   //Metodo 5 metodo busquedaRecaudador
+   public Recaudador busquedaRecaudador(String nombreBuscar,String apellidoBuscar){
+    for(Persona p: listPersonas){
+        if(p instanceof Recaudador){
+            Recaudador recaudador = (Recaudador) p;
+            if(recaudador.getNombre().equalsIgnoreCase(nombreBuscar) && recaudador.getApellido().equalsIgnoreCase(apellidoBuscar)){
+                return recaudador;
+            }
+        }
+    }
+    return null;
+
+   }
+   //Metodo 5 lista de conductores con almenos un camion con capacidad de carga mayor a 10 toneladas
+   
+   public ArrayList<Conductor> listConductores(){
+    ArrayList<Conductor> listConductoresConCamiones10ton = new ArrayList<>();
+
+    for(Persona p: listPersonas){
+        for(Vehiculo v:p.getListVehiculosAsignados()){
+            if(p instanceof Conductor && v instanceof VehiculoCamion){
+                Conductor conductor = (Conductor) p;
+                VehiculoCamion vehiculoCamion = (VehiculoCamion) v;
+                if(vehiculoCamion.getCapacidadCarga() > 10){
+                    listConductoresConCamiones10ton.add(conductor);
+                }
+                
+            }
+        }
+    }
+    return null;
+
 
    }
 

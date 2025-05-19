@@ -46,11 +46,11 @@ public class EstacionPeaje {
    }
    //Metodo de tarifa de peaje de moto
    public double tarifaPeajeVehiculoMoto(Vehiculo vehiculo){
-        double valorTotal=5.000;
+        double valorTotal=5000;
             if(vehiculo instanceof VehiculoMoto){
                 VehiculoMoto v = (VehiculoMoto) vehiculo;
                 if(v.getCilindraje() > 200){
-                    valorTotal+= valorTotal+2000;
+                    valorTotal+= 2000;
                 }
             }
         return valorTotal;
